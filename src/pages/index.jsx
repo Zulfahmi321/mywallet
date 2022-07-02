@@ -1,3 +1,4 @@
+import styles from '../styles/Landing.module.css'
 import Image from 'next/image'
 import TelpIcon from 'assets/icons/telp-icon.png'
 import Lock from 'assets/icons/lock-icon.png'
@@ -8,22 +9,27 @@ import Hm from 'assets/img/hm-logo.png'
 import Air from 'assets/img/air-logo.png'
 import Canon from 'assets/img/canon-logo.png'
 import Dell from 'assets/img/dell-logo.png'
-import styles from '../styles/Home.module.css'
-import Layout from 'assets/img/layout.png'
+import LayoutImg from 'assets/img/layout.png'
 import ArrowLeft from 'assets/icons/arrow-left.png'
 import ArrowRight from 'assets/icons/arrow-right.png'
 import ProfImg from 'assets/img/profil.png'
+import Link from 'next/link'
+import Layout from 'components/Layout'
 
 
 export default function Home() {
   return (
-    <div>
+    <Layout title='My Wallet'>
       <header className={styles.headerBg}>
         <section className={styles.navBanner}>
           <div className={styles.fazzPay}>Fazzpay</div>
           <div className={styles.wrapperButton}>
-            <div className={styles.btnLogin}>Login</div>
-            <div className={styles.btnSignUp}>Sign Up</div>
+            <Link href="/login">
+              <div className={styles.btnLogin}>Login</div>
+            </Link>
+            <Link href="/register">
+              <div className={styles.btnSignUp}>Sign Up</div>
+            </Link>
           </div>
         </section>
         <section className={styles.mainBanner}>
@@ -77,7 +83,7 @@ export default function Home() {
         </section>
         <section className={styles.wrapperFeatureTwo}>
           <aside className={styles.featureTwoImage}>
-            <Image src={Layout} alt='layoutImg'></Image>
+            <Image src={LayoutImg} alt='layoutImg'></Image>
           </aside>
           <aside className={styles.featureTwoContent}>
             <div className={styles.featureTwoContentTitle}>All The <div className={styles.why}>Great</div> FazzPay Features.</div>
@@ -131,6 +137,6 @@ export default function Home() {
           <div className={styles.contactEmail}>contact@fazzpay.com</div>
         </div>
       </footer>
-    </div>
+    </Layout>
   )
 }

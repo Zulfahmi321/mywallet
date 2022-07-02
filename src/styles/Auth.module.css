@@ -1,0 +1,216 @@
+.globalContainer{
+    display: flex;
+}
+
+.asideContainer {
+    flex: 1;
+    background: url(../assets/img/banner-bg.png);
+    width: 50%;
+    background-size: cover;
+    background-position: 50% 0;
+    padding: 50px 5%;
+}
+
+.asideLogo{
+    font-size: 29px;
+    font-weight: 700;
+    line-height: 40px;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.asideTitle{
+    font-size: 24px;
+    font-weight: 700;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.asideInfo{
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.mainContainer{
+    flex: 1;
+    padding: 50px 5%;
+    background: #FAFCFF;
+}
+
+.mainContentTitle{
+    font-size: 24px;
+    font-weight: 700;
+    text-align: left;
+    color: #3A3D42;
+}
+
+.mainContentInfo{
+    margin: 20px 0px;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    color: rgba(58, 61, 66, 0.6);
+}
+
+.inputContainer{
+    margin: 20px 0px;
+    border-bottom: 1.5px solid rgba(169, 169, 169, 0.6);
+    height: 42px;
+    width: 100%;
+}
+
+.inputContainer label {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    color: rgba(169, 169, 169, 0.6);
+}
+
+.eye{
+    cursor: pointer;
+}
+
+.inputContainer input {
+    padding: 5px 2.5%;
+    border: none;
+    height: 40px;
+    width: 85%;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    color: #3A3D42;
+    background: #FAFCFF;
+}
+
+.inputContainer input::placeholder {
+    color: rgba(169, 169, 169, 0.8);
+}
+
+.inputContainer input:focus {
+    outline: none;
+}
+
+.forgot {
+    font-size: 14px;
+    font-weight: 600;
+    text-align: right;
+    color: rgba(58, 61, 66, 0.8);
+    cursor: pointer;
+}
+
+.forgot:hover{
+    font-weight: 700;
+    color: #6379F4;
+}
+
+.button {
+    margin-top: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    background: #6379F4;
+    box-shadow: 0px 6px 75px rgba(100, 87, 87, 0.05);
+    border-radius: 12px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    cursor: pointer;
+}
+
+.errorMsg {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    color: red
+}  
+
+.successMsg{
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    color: rgb(24, 177, 103)
+}
+
+.login {
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    color: rgba(58, 61, 66, 0.8);
+}
+
+.login a {
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    color: #6379F4;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.wrapperInputPin{
+    display: flex;
+	flex-flow: column;
+	align-items: space-around;
+	justify-content: center;
+}
+
+.inputContainerPin{
+    display: flex;
+	justify-content: center;
+}
+
+.inputContainerPin input{
+    margin: 10px;
+	height: 35px;
+	width: 65px;
+	border: 1px solid #6379F4;
+	border-radius: 5px;
+	text-align: center;
+	font-family: arimo;
+	font-size: 1.2rem;
+	background: #eef2f3;
+}
+
+.wrapperInputPin button{
+    width: 200px;
+	height: 40px;
+	margin: 25px auto 0px auto;
+    font-weight: 400;
+    font-size: 15px;
+	border: none;
+	border-radius: 5px;
+	letter-spacing: 2px;
+	cursor: pointer;
+	background: #6379F4; 
+    color: white;
+}
+
+.checkContainer{
+    font-size: 50px;
+    text-align: center;
+}
+
+@media(max-width: 768px){
+    .globalContainer{
+        display: flex;
+        flex-direction: column;
+    }
+    .asideContainer {
+        flex: 1;
+        background: url(../assets/img/banner-bg.png);
+        width: 100%;
+        background-size: cover;
+        background-position: 50% 0;
+        padding: 50px 5%;
+    }
+}

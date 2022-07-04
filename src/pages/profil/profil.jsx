@@ -1,5 +1,5 @@
 import UserLayout from 'components/UserLayout'
-import styles from '../../styles/profil.module.css'
+import styles from '../../styles/Profil.module.css'
 import ProfDef from '../../assets/img/profil-default.png'
 import Image from 'next/image'
 function Profil() {

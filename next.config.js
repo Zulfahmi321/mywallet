@@ -36,7 +36,11 @@ const nextConfig = {
       },
       {
         source:'/profil',
-        destination:'/dashboard/profil',     
+        destination:'/profil/profil',     
+      },
+      {
+        source:'/changepin',
+        destination:'/profil/changepin',     
       },
 
 

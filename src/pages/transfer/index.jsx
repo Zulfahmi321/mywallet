@@ -30,12 +30,13 @@ function Transfer() {
                 }
                 const response = await axios.get(url, config)
                 setUser(response.data.data)
-                console.log(user)
+                // console.log(user)
             } catch (error) {
                 console.log(error)
             }
         }
         getUser()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [search])
 
     return (
@@ -58,7 +59,7 @@ function Transfer() {
                             >
                                 <div className={styles.profPictContainer}>
                                     <Image
-                                        src={user.image === null ? ProfDef : `${user.image}`}
+                                        src={user.image === null ? ProfDef : `${process.env.NEXT_PUBLIC_IMG}${user.image}`}
                                         className={styles.profPict} width={'80px'} height={'80px'} alt='profil-img' /></div>
                                 <div className={styles.nameContainer}>
                                     <div className={styles.name}>{`${user.firstName} ${user.lastName}`}</div>

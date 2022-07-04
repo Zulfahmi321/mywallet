@@ -116,7 +116,9 @@ export default function UserDetail() {
 
     useEffect(() => {
         getUserDetail()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+    console.log(process.env.NEXT_PUBLIC_IMG);
     return (
         <>
             <UserLayout title="Transfer">
@@ -125,7 +127,7 @@ export default function UserDetail() {
                         <section className={styles.transferCard}>
                             <div className={styles.title}>Transfer Money</div>
                             <div className={styles.userCard}>
-                                <div className={styles.profPictContainer}><Image src={user.image ? user.image : ProfDef} className={styles.profPict} alt='Profil-img' /></div>
+                                <div className={styles.profPictContainer}><Image src={user.image === null ? ProfDef : `${process.env.NEXT_PUBLIC_IMG}${user.image}`} width="60" height="60" className={styles.profPict} alt='Profil-img' /></div>
                                 <div className={styles.nameContainer}>
                                     <div className={styles.name}>{`${user.firstName} ${user.lastName}`}</div>
                                     <div className={styles.number}>{user.noTelp}</div>

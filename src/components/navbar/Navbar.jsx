@@ -20,12 +20,12 @@ function Navbar() {
             <div className={styles.navbarLogo}>FazzPay</div>
             <div className={styles.wrapperNavbarProf}>
                 <div className={styles.navbarProfPict}>
-                    <Image src={user.image === null ? ProfDef : `${process.env.NEXT_PUBLIC_IMG}${user.image}`} alt='Profil-Image' width={40} height={40}></Image>
+                    <Image src={userData.image === null ? ProfDef : `${process.env.NEXT_PUBLIC_IMG}${userData.image}`} alt='Profil-Image' width={40} height={40}></Image>
                 </div>
                 <div className={styles.wrapperNavbarInfo}>
                     <div className={styles.navbarProfName}>{userData.firstName} {userData.lastName}</div>
-                    {/* <div className={styles.navbarProfNumber}>{userData.noTelp}</div> */}
-                    <div className={styles.navbarProfNumber}>+62 8139 3877 7946</div>
+                    <div className={styles.navbarProfNumber}>{userData.noTelp}</div>
+                    {/* <div className={styles.navbarProfNumber}>+62 8139 3877 7946</div> */}
                 </div>
                 <div className={styles.wrapperIcon}>
                     <Bell className={styles.icon} />

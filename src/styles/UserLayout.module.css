@@ -1,0 +1,191 @@
+.container{
+    background-color: #edeef1;
+}
+/* Navbar */
+.navbarContainer{
+    padding: 2% 2%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.navbarLogo{
+    font-weight: 700;
+    font-size: 30px;
+    color: #6379F4;
+}
+
+.wrapperNavbarProf{
+    display: flex;
+    gap: 10px;
+}
+
+.navbarProfName{
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+}
+
+.navbarProfNumber{
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.wrapperIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon{
+    font-size: 25px;
+}
+
+.mainContainer{
+    display: flex;
+    gap: 20px;
+    margin: 5% 5%;
+}
+
+.asideCard{
+    background-color: white;
+    padding: 5%;
+    width: 25%;
+    height: 500px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cardButton{
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.cardButton:hover{
+    color: blue;
+}
+
+.footer {
+    background: #6379F4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+}
+
+.footer .copyright {
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(239, 239, 239, 0.9);
+}
+
+.footer .right {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #EFEFEF;
+}
+
+.inputTopUpContainer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(169, 169, 169, 0.6);
+    box-shadow: 0px 10px 75px rgba(147, 147, 147, 0.1);
+    border-radius: 10px;
+    height: 60px;
+}
+
+.inputTopUp {
+    align-self: center;
+    border: none;
+    border-bottom: 1px solid rgba(169, 169, 169, 0.4);
+    font-family: Nunito Sans;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+.inputTopUp:focus {
+    outline: none;
+}
+
+.inputTopUp::-webkit-outer-spin-button,
+.inputTopUp::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.topUpModal {
+    padding: 2%;
+    text-align: center;
+    width: 500px;
+    height: 250px;
+    background-color: white;
+    position: absolute;
+    top: 25%;
+    left: 35%;
+}
+
+.modalHeader{
+    text-align: center;
+    font-size: 30px;
+
+}
+
+.modalCancelButton{
+    font-family: Nunito Sans;
+    margin: 2%;
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: #acaebb;
+    color: #000000;
+}
+
+.modalPrimaryButton {
+    font-family: Nunito Sans;
+    margin: 2%;
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: #6379F4;
+    color: #FFFFFF;
+}
+
+.modalPrimaryButton a {
+    color: #FFFFFF;
+    text-decoration: none;
+}

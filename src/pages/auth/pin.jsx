@@ -11,6 +11,7 @@ const Pin = () => {
     const [otp, setOtp] = useState(new Array(6).fill(""))
     const [isSuccess, setIsSuccess] = useState(false)
     const [msg, setMsg] = useState("")
+
     const { data } = useSelector(state => state.auth)
 
     useEffect(() => {
@@ -55,7 +56,7 @@ const Pin = () => {
                         <div className={styles.mainContentInfo}>
                             Your PIN was successfully created and you can now access all the features in FazzPay.
                         </div>
-                        <Link href={"/home"}>
+                        <Link href={"/dashboard"}>
                             <div className={styles.button}>Go To Dashboard</div>
                         </Link>
                     </section>

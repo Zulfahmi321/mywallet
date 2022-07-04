@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    domains: ['res.cloudinary.com'],
+  },
   async rewrites(){
     return[
       {
@@ -20,9 +23,22 @@ const nextConfig = {
         destination:'/auth/reset',     
       },
       {
-        source:'/home',
-        destination:'/home/home',     
+        source:'/dashboard',
+        destination:'/dashboard/dashboard',     
       },
+      {
+        source:'/transfer',
+        destination:'/transfer/index',     
+      },  
+      {
+        source:'/topup',
+        destination:'/dashboard/topup',     
+      },
+      {
+        source:'/profil',
+        destination:'/dashboard/profil',     
+      },
+
 
 
     ]

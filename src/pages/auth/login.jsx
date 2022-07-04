@@ -20,7 +20,7 @@ function Login() {
     const { isError, message, data } = useSelector(state => state.auth)
     useEffect(() => {
         if (isError === false) {
-            (data.pin ? router.push('/') : router.push('/pin'))
+            (data.pin ? router.push('/dashboard') : router.push('/pin'))
         }
     })
 

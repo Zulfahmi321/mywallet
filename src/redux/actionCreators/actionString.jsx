@@ -1,4 +1,5 @@
 export const loginString = "LOGIN"
+export const logoutString = "LOGOUT"
 
 export const getUserDataString = "GET_USER_DATA"
 

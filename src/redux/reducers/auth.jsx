@@ -1,4 +1,4 @@
-import { FULFILLED, loginString, PENDING, REJECTED } from "../actionCreators/actionString";
+import { FULFILLED, loginString, logoutString, PENDING, REJECTED } from "../actionCreators/actionString";
 
 const initialState = {
     isError: null,
@@ -23,7 +23,8 @@ const authReducer = (prevState = initialState, action) => {
                 isError: true,
                 message: action.payload.response.data.msg
             }
-
+        case logoutString:
+            return { ...initialState }
         default:
             return prevState
     }

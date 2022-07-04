@@ -10,20 +10,27 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 import { getUserDataAction } from 'redux/actionCreators/userData'
+import { logoutAction } from 'redux/actionCreators/auth'
+import { useRouter } from 'next/router'
 
 function UserLayout(props) {
     const [amount, setAmount] = useState(0)
     const [isSuccess, setIsSuccess] = useState(false)
     const [msg, setMsg] = useState("")
     const [showTopUp, setShowTopUp] = useState(false)
+    const [show, setShow] = useState(false)
     const [link, setLink] = useState("")
 
+    const router = useRouter()
     const dispatch = useDispatch()
     const { data } = useSelector(state => state.auth)
-    const { userData } = useSelector(state => state.user)
+    // const { userData } = useSelector(state => state.user)
+
 
     const handleClose = () => setShowTopUp(false);
     const handleShow = () => setShowTopUp(true);
+    const handleCloseLogout = () => setShow(false);
+    const handleShowLogout = () => setShow(true);
 
     useEffect(() => {
         dispatch(getUserDataAction(data.id, data.token))
@@ -43,6 +50,19 @@ function UserLayout(props) {
         catch (error) {
             console.log(error);
             setIsSuccess(false)
+        }
+    }
+    const handlerLogout = async () => {
+        try {
+            const { token } = data
+            const config = { headers: { Authorization: `Bearer ${token}` } }
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_BE_HOST}/auth/logout`, config)
+            console.log(response)
+            dispatch(logoutAction())
+            setShow(false)
+            router.push('/')
+        } catch (error) {
+            console.log(error)
         }
     }
     return (
@@ -80,7 +100,7 @@ function UserLayout(props) {
                         </Link>
                         <div className={styles.cardButton}>
                             <BoxArrowInRight className={styles.icon} />
-                            <div className={styles.button}>Logout</div>
+                            <div className={styles.button} onClick={handleShowLogout}>Logout</div>
                         </div>
                     </aside>
                     {props.children}
@@ -121,6 +141,20 @@ function UserLayout(props) {
                                 Submit
                             </Button>
                         }
+                    </Modal.Footer>
+                </Modal>
+                <Modal show={show} onHide={handleCloseLogout} className={styles.topUpModal}>
+                    <Modal.Header className={styles.modalHeader}>
+                        <Modal.Title>Warning !</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body className={styles.modalBody}>Do you want to logout?</Modal.Body>
+                    <Modal.Footer>
+                        <Button className={styles.modalCancelButton} onClick={handleCloseLogout}>
+                            Cancel
+                        </Button>
+                        <Button className={styles.modalPrimaryButton} onClick={handlerLogout}>
+                            Proceed
+                        </Button>
                     </Modal.Footer>
                 </Modal>
             </div>

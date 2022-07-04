@@ -1,4 +1,4 @@
-import { getUserDataString, PENDING, FULFILLED, REJECTED } from "redux/actionCreators/actionString";
+import { getUserDataString, PENDING, FULFILLED, REJECTED, logoutString } from "redux/actionCreators/actionString";
 const initialState = {
     isError: null,
     message: "",
@@ -12,7 +12,9 @@ const userDataReducer = (prevState = initialState, action) => {
         case getUserDataString + FULFILLED:
             return { ...prevState, isError: false, message: action.payload.data.msg, userData: action.payload.data.data }
         case getUserDataString + REJECTED:
-            return { ...prevState, isError: true, message: action.payload.data.msg }
+            return { ...prevState, isError: true, message: action.payload.data }
+        case logoutString:
+            return { ...initialState }
         default:
             return prevState
     }

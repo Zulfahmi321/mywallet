@@ -20,7 +20,7 @@ function Navbar() {
             <div className={styles.navbarLogo}>FazzPay</div>
             <div className={styles.wrapperNavbarProf}>
                 <div className={styles.navbarProfPict}>
-                    <Image src={ProfDef} alt='Profil-Image' width={40} height={40}></Image>
+                    <Image src={user.image === null ? ProfDef : `${process.env.NEXT_PUBLIC_IMG}${user.image}`} alt='Profil-Image' width={40} height={40}></Image>
                 </div>
                 <div className={styles.wrapperNavbarInfo}>
                     <div className={styles.navbarProfName}>{userData.firstName} {userData.lastName}</div>

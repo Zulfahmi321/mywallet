@@ -53,8 +53,8 @@ function Dashboard() {
                     <div className={styles.balanceLeft}>
                         <div className={styles.title}>Balance</div>
                         <div className={styles.balance}>{currencyFormatter.format(userData.balance)}</div>
-                        {/* <div className={styles.navbarProfNumber}>{userData.noTelp}</div> */}
-                        <div className={styles.phone}>+62 813-9387-7946</div>
+                        <div className={styles.navbarProfNumber}>{userData.noTelp}</div>
+                        {/* <div className={styles.phone}>+62 813-9387-7946</div> */}
                     </div>
                     <div className={styles.balanceRight}>
                         <div className={styles.transfer}><ArrowUp className={styles.icon} /> Transfer</div>

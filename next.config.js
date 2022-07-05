@@ -43,8 +43,16 @@ const nextConfig = {
         destination:'/profil/profil',     
       },
       {
-        source:'/changepin',
+        source:'/profil/changepin',
         destination:'/profil/changepin',     
+      },
+      {
+        source:'/profil/personalinfo',
+        destination:'/profil/personalinfo',     
+      },
+      {
+        source:'/profil/editphone',
+        destination:'/profil/editphone',     
       },
 
 

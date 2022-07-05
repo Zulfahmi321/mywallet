@@ -59,14 +59,14 @@ function Changepin() {
         <UserLayout title='Change PIN'>
             <main className={styles.container}>
                 {page === "enter" ?
-                    <section className={styles.mainContainer}>
+                    <section className={styles.mainContainerChangePin}>
                         <div className={styles.mainContentTitle}>Change PIN</div>
                         <div className={styles.mainContentInfo}>Enter your current 6 digits Zwallet PIN below to continue to the next steps.</div>
                         <div className={styles.wrapperInputPin}>
                             <div className={styles.inputContainerPin}>
                                 {otp.map((data, index) => {
                                     return (
-                                        <input type="number"
+                                        <input type="text"
                                             maxLength="1"
                                             key={index}
                                             value={data}
@@ -81,14 +81,14 @@ function Changepin() {
                         </div>
                     </section>
                     :
-                    <section className={styles.mainContainer}>
+                    <section className={styles.mainContainerChangePin}>
                         <div className={styles.mainContentTitle}>Change PIN</div>
                         <div className={styles.mainContentInfo}>Type your new 6 digits security PIN to use in Zwallet.</div>
                         <div className={styles.wrapperInputPin}>
                             <div className={styles.inputContainerPin}>
                                 {otp.map((data, index) => {
                                     return (
-                                        <input type="number"
+                                        <input type="text"
                                             maxLength="1"
                                             key={index}
                                             value={data}

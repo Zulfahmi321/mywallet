@@ -68,7 +68,7 @@ const Pin = () => {
                             <div className={styles.inputContainerPin}>
                                 {otp.map((data, index) => {
                                     return (
-                                        <input type="number"
+                                        <input type="text"
                                             maxLength="1"
                                             key={index}
                                             value={data}

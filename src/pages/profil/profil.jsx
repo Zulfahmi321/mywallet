@@ -4,14 +4,17 @@ import ProfDef from '../../assets/img/profil-default.png'
 import Image from 'next/image'
 import { ArrowRight } from 'react-bootstrap-icons'
 import Link from 'next/link'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { getUserDataAction } from 'redux/actionCreators/userData'
 
 function Profil() {
     const [previewImg, setPreviewImg] = useState(null)
     const [image, setImage] = useState("")
+    const [msg, setMsg] = useState("")
 
+    const dispatch = useDispatch()
     const { data } = useSelector(state => state.auth)
     const { userData } = useSelector(state => state.user)
 
@@ -23,11 +26,17 @@ function Profil() {
             const config = { headers: { Authorization: `Bearer ${token}`, "content-type": "multipart/form-data" } }
             const response = await axios.patch(`${process.env.NEXT_PUBLIC_BE_HOST}/user/image/${id}`, body, config)
             console.log(response);
+            setMsg(response.data.msg)
         }
         catch (error) {
             console.log(error);
         }
     }
+
+    useEffect(() => {
+        dispatch(getUserDataAction(data.id, data.token))
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [msg])
 
     return (
         <UserLayout title='Profil'>
